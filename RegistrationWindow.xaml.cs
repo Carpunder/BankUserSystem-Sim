@@ -36,5 +36,21 @@ namespace KursRSPO
             if (e.ChangedButton == MouseButton.Left)
                 this.DragMove();
         }
+
+        private void numberField_GotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
+        {
+            if (numberField.Text == "")
+            {
+                numberField.Text = "+375";
+            }
+        }
+
+        private void numberField_LostKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
+        {
+            if (numberField.Text == "+375")
+            {
+                numberField.Text = "";
+            }
+        }
     }
 }

@@ -20,16 +20,16 @@
                 <DropShadowEffect ShadowDepth="2"/>
             </Border.Effect>
             <StackPanel>
-                <ComboBox Style="{StaticResource MaterialDesignFloatingHintComboBox}" Margin="10,20,10,10" materialDesign:HintAssist.Foreground="#FFCDD9E5" materialDesign:HintAssist.Hint="Лицо" FontSize="24" Foreground="#FFCDD9E5" Background="{x:Null}" BorderBrush="#FFCDD9E5">
+                <ComboBox x:Name="typeField" Style="{StaticResource MaterialDesignFloatingHintComboBox}" Margin="10,20,10,10" materialDesign:HintAssist.Foreground="#FFCDD9E5" materialDesign:HintAssist.Hint="Лицо" FontSize="24" Foreground="#FFCDD9E5" Background="{x:Null}" BorderBrush="#FFCDD9E5">
                     <TextBlock Text="Физическое"/>
                     <TextBlock Text="Юридическое"/>
                 </ComboBox>
-                <TextBox Style="{StaticResource MaterialDesignTextBox}" materialDesign:HintAssist.Hint="Номер налогоплательщика" FontSize="24" Margin="10,20,10,10" Foreground="#FFCDD9E5" CaretBrush="#FFCDD9E5"></TextBox>
-                <TextBox Style="{StaticResource MaterialDesignTextBox}" materialDesign:HintAssist.Hint="Логин" FontSize="24" Margin="10,20,10,10" Foreground="#FFCDD9E5" CaretBrush="#FFCDD9E5"></TextBox>
-                <TextBox Style="{StaticResource MaterialDesignTextBox}" materialDesign:HintAssist.Hint="Пароль" FontSize="24" Margin="10,20,10,10" Foreground="#FFCDD9E5" CaretBrush="#FFCDD9E5"></TextBox>
-                <TextBox Style="{StaticResource MaterialDesignTextBox}" materialDesign:HintAssist.Hint="ФИО (необязательно)" FontSize="24" Margin="10,20,10,10" Foreground="#FFCDD9E5" CaretBrush="#FFCDD9E5"></TextBox>
-                <TextBox Style="{StaticResource MaterialDesignTextBox}" materialDesign:HintAssist.Hint="Пасспорт (Идентификационный №)" FontSize="24" Margin="10,20,10,10" Foreground="#FFCDD9E5" CaretBrush="#FFCDD9E5"></TextBox>
-                <TextBox Style="{StaticResource MaterialDesignTextBox}" materialDesign:HintAssist.Hint="Номер телефона" FontSize="24" Margin="10,20,10,10" Foreground="#FFCDD9E5" CaretBrush="#FFCDD9E5"></TextBox>
+                <TextBox x:Name="vatinField" Style="{StaticResource MaterialDesignTextBox}" materialDesign:HintAssist.Hint="Учётный номер плательщика" FontSize="24" Margin="10,20,10,10" Foreground="#FFCDD9E5" CaretBrush="#FFCDD9E5" MaxLength="9" MaxLines="1" Height="41"/>
+                <TextBox x:Name="loginField"  Style="{StaticResource MaterialDesignTextBox}" materialDesign:HintAssist.Hint="Логин" FontSize="24" Margin="10,20,10,10" Foreground="#FFCDD9E5" CaretBrush="#FFCDD9E5"></TextBox>
+                <PasswordBox x:Name="passwordField"  Style="{StaticResource MaterialDesignPasswordBox}" materialDesign:HintAssist.Hint="Пароль" FontSize="24" Margin="10,20,10,10" Foreground="#FFCDD9E5" CaretBrush="#FFCDD9E5"></PasswordBox>
+                <TextBox x:Name="fioField" Style="{StaticResource MaterialDesignTextBox}" materialDesign:HintAssist.Hint="ФИО (необязательно)" FontSize="24" Margin="10,20,10,10" Foreground="#FFCDD9E5" CaretBrush="#FFCDD9E5"></TextBox>
+                <TextBox x:Name="passportField" Style="{StaticResource MaterialDesignTextBox}" materialDesign:HintAssist.Hint="Пасспорт (Идентификационный №)" FontSize="24" Margin="10,20,10,10" Foreground="#FFCDD9E5" CaretBrush="#FFCDD9E5" MaxLength="14"></TextBox>
+                <TextBox x:Name="numberField" ToolTip="Формат +375*********" Style="{StaticResource MaterialDesignTextBox}" materialDesign:HintAssist.Hint="Номер телефона" FontSize="24" Margin="10,20,10,10" Foreground="#FFCDD9E5" CaretBrush="#FFCDD9E5" MaxLength="13" GotKeyboardFocus="numberField_GotKeyboardFocus" LostKeyboardFocus="numberField_LostKeyboardFocus"/>
                 <Grid Height="57">
                     <Button Content="Зарегистрироваться" Foreground="#FFFFFCF6" Height="Auto" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="176,10,10,0"/>
                 </Grid>
