@@ -31,7 +31,7 @@
                 <TextBox x:Name="passportField" Style="{StaticResource MaterialDesignTextBox}" materialDesign:HintAssist.Hint="Пасспорт (Идентификационный №)" FontSize="24" Margin="10,20,10,10" Foreground="#FFCDD9E5" CaretBrush="#FFCDD9E5" MaxLength="14"></TextBox>
                 <TextBox x:Name="numberField" ToolTip="Формат +375*********" Style="{StaticResource MaterialDesignTextBox}" materialDesign:HintAssist.Hint="Номер телефона" FontSize="24" Margin="10,20,10,10" Foreground="#FFCDD9E5" CaretBrush="#FFCDD9E5" MaxLength="13" GotKeyboardFocus="numberField_GotKeyboardFocus" LostKeyboardFocus="numberField_LostKeyboardFocus"/>
                 <Grid Height="57">
-                    <Button Content="Зарегистрироваться" Foreground="#FFFFFCF6" Height="Auto" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="176,10,10,0"/>
+                    <Button x:Name="registrationButton" Content="Зарегистрироваться" Foreground="#FFFFFCF6" Height="Auto" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="176,10,10,0" Click="registrationButton_Click"/>
                 </Grid>
                 <Button Content="Выход" Foreground="#FFFFFCF6" Height="40" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="282,25,10,0" Click="Button_Click" />
             </StackPanel>

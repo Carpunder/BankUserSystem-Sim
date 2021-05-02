@@ -1,4 +1,4 @@
-﻿<Window x:Name="AuthorizationWindow" x:Class="KursRSPO.MainWindow"
+﻿<Window x:Name="Authorization" x:Class="KursRSPO.AuthorizationWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -23,7 +23,7 @@
         <Label Content="Авторизация" HorizontalAlignment="Left" Margin="15,82,0,0" VerticalAlignment="Top" Foreground="#FFCDD9E5" FontSize="48" Grid.Column="1" Height="72" Width="295"/>
         <TextBox x:Name="loginField" materialDesign:HintAssist.Hint="Логин" HorizontalAlignment="Left" Height="48" Margin="15,10,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="215" Foreground="#FFCDD9E5" Text="" FontSize="24" CaretBrush="#FFCDD9E5" BorderBrush="#FF6D7A86" Grid.Column="1"/>
         <PasswordBox x:Name="passwordField" materialDesign:HintAssist.Hint="Пароль" HorizontalAlignment="Left" Height="48" Margin="15,98,0,0" Grid.Row="1" VerticalAlignment="Top" Width="215" Foreground="#FFCDD9E5" FontSize="24" CaretBrush="#FFCDD9E5" BorderBrush="#FF6D7A86" Grid.Column="1"/>
-        <Button Content="Войти" Foreground="#FFFFFCF6" Height="55" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Center" Width="166" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="16,21,238,0" Grid.Row="2" Grid.Column="1"/>
+        <Button x:Name="loginButton" Content="Войти" Foreground="#FFFFFCF6" Height="55" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Center" Width="166" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="16,21,238,0" Grid.Row="2" Grid.Column="1" Click="loginButton_Click"/>
         <Button Content="Регистрация" Foreground="#FFFFFCF6" Height="55" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Center" Width="166" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="3" Margin="10,10,154,0" Grid.Row="1" Click="Button_Click_1"/>
         <Button Content="Выход" Foreground="#FFFFFCF6" Height="55" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Center" Width="166" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="10,98,154,0" Grid.Row="1" Grid.Column="3" Click="Button_Click"/>
     </Grid>

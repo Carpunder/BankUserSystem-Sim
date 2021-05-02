@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -7,36 +9,35 @@ using System.Threading.Tasks;
 
 namespace KursRSPO.Classes
 {
+    [Table("Users")]
     class User
     {
-        private string userType
+        public static int userId;
+        [Key]
+        public int id { get; set; }
+        public int admin { get; set; }
+        public string type;
+        public string Type
         {
-            get => userType;
+            get => type;
             set
             {
                 if (value.Equals("Физическое") || value.Equals("Юридическое"))
-                    userType = value;
+                    type = value;
                 else
                 {
                     throw new ArgumentException("Физическое или Юридическое");
                 }
             }
         }
-        private string vatin
+
+        public string vatin;
+        public string Vatin
         {
             get => vatin;
             set
             {
-                if (userType == "Физическое" && Regex.IsMatch(value, @"^[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]$"))
-                {
-                    vatin = value;
-                }
-                else
-                {
-                    throw new ArgumentException("Неверный формат");
-                }
-                if (userType == "Юридическое" &&
-                    Regex.IsMatch(value, @"^[0-9]([0-9]|[А-Я])([0-9]|[А-Я])([0-9]|[А-Я])([0-9]|[А-Я])([0-9]|[А-Я])([0-9]|[А-Я])([0-9]|[А-Я])[0-9]$"))
+                if (Regex.IsMatch(value, @"^[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]$"))
                 {
                     vatin = value;
                 }
@@ -46,7 +47,9 @@ namespace KursRSPO.Classes
                 }
             }
         }
-        private string login
+
+        public string login;
+        public string Login
         {
             get => login;
             set
@@ -59,7 +62,9 @@ namespace KursRSPO.Classes
                 }
             }
         }
-        private string password
+
+        public string password;
+        public string Password
         {
             get => password;
             set
@@ -72,22 +77,30 @@ namespace KursRSPO.Classes
                 }
             }
         }
-        private string firstName
+
+        public string firstName;
+        public string FirstName
         {
             get => firstName;
             set { firstName = value; }
         }
-        private string middleName
+
+        public string middleName;
+        public string MiddleName
         {
             get => middleName;
             set { middleName = value; }
         }
-        private string lastName
+
+        public string lastName;
+        public string LastName
         {
             get => lastName;
             set { lastName = value; }
         }
-        private string passport
+
+        public string passport;
+        public string Passport
         {
             get => passport;
             set
@@ -103,12 +116,14 @@ namespace KursRSPO.Classes
                 }
             }
         }
-        private string phoneNumber
+
+        public string phoneNumber;
+        public string PhoneNumber
         {
             get => phoneNumber;
             set
             {
-                if (Regex.IsMatch(value, @"^+375(44|25|33|29)[0-9][0-9][0-9][0-9][0-9][0-9][0-9]"))
+                if (Regex.IsMatch(value, @"(44|25|33|29)[0-9][0-9][0-9][0-9][0-9][0-9][0-9]$"))
                 {
                     phoneNumber = value;
                 }
@@ -119,7 +134,9 @@ namespace KursRSPO.Classes
             }
 
         }
-        private double balance
+
+        public double balance;
+        public double Balance
         {
             get => balance;
             set { balance = value; }
@@ -129,26 +146,26 @@ namespace KursRSPO.Classes
 
         public User(string userType, string vatin, string login, string password, string passport, string phoneNumber)
         {
-            this.userType = userType;
-            this.vatin = vatin;
-            this.login = login;
-            this.password = password;
-            this.passport = passport;
-            this.phoneNumber = phoneNumber;
+            Type = userType;
+            Vatin = vatin;
+            Login= login;
+            Password = password;
+            Passport = passport;
+            PhoneNumber = phoneNumber;
         }
 
         public User(string userType, string vatin, string login, string fio, string password, string passport, string phoneNumber)
         {
             var temp = fio.Split(' ');
-            this.userType = userType;
-            this.vatin = vatin;
-            this.login = login;
-            firstName = temp[1];
-            middleName = temp[0];
-            lastName = temp[2];
-            this.password = password;
-            this.passport = passport;
-            this.phoneNumber = phoneNumber;
+            Type = userType;
+            Vatin = vatin;
+            Login = login;
+            FirstName = temp[1];
+            MiddleName = temp[0];
+            LastName = temp[2];
+            Password = password;
+            Passport = passport;
+            PhoneNumber = phoneNumber;
         }
 
 
