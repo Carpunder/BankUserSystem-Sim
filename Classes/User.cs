@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace KursRSPO.Classes
 {
     [Table("Users")]
-    class User
+    public class User
     {
         public static int userId;
         [Key]
@@ -153,22 +153,6 @@ namespace KursRSPO.Classes
             Passport = passport;
             PhoneNumber = phoneNumber;
         }
-
-        public User(string userType, string vatin, string login, string fio, string password, string passport, string phoneNumber)
-        {
-            var temp = fio.Split(' ');
-            Type = userType;
-            Vatin = vatin;
-            Login = login;
-            FirstName = temp[1];
-            MiddleName = temp[0];
-            LastName = temp[2];
-            Password = password;
-            Passport = passport;
-            PhoneNumber = phoneNumber;
-        }
-
-
 
     }
 }

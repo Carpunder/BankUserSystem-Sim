@@ -7,13 +7,19 @@ using System.Threading.Tasks;
 
 namespace KursRSPO.Classes
 {
-    class Operation
+    public class Operation
     {
         [Key]
         public int id { get; set; }
         public int user_id { get; set; }
         public string name { get; set; }
-        public string type
+        public string Name
+        {
+            get => name;
+            set { name = value; }
+        }
+        public string type { get; set; }
+        public string Type
         {
             get => type;
             set
@@ -25,9 +31,9 @@ namespace KursRSPO.Classes
                     throw new ArgumentException("wrong type of operation");
                 }
             }
-
         }
-        public double amount
+        public double amount { get; set; }
+        public double Amount
         {
             get => amount;
             set
@@ -47,8 +53,8 @@ namespace KursRSPO.Classes
         {
             this.user_id = user_id;
             this.name = name;
-            this.type = type;
-            this.amount = amount;
+            Type = type;
+            Amount = amount;
         }
 
     }

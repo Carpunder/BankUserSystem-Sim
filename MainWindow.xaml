@@ -1,12 +1,55 @@
-﻿<Window x:Name="mainWindow" x:Class="KursRSPO.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KursRSPO"
+        xmlns:Classes="clr-namespace:KursRSPO.Classes" x:Name="mainWindow" x:Class="KursRSPO.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="Kurs RSPO" Height="695" Width="863.75" Icon="bankDark.png" Background="#FF22272E" ResizeMode="CanMinimize" WindowStyle="None" MouseDown="mainWindow_MouseDown">
+    <Grid Loaded="Grid_Loaded" Margin="0,0,4,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="153*"/>
+            <RowDefinition Height="227*"/>
+            <RowDefinition Height="183*"/>
+            <RowDefinition Height="103*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="391*"/>
+            <ColumnDefinition Width="469*"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="titleLabel" Grid.Column="0" Margin="5,5,0,0" Content="User Login" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FFCDD9E5" FontSize="48" Height="72" Width="246"/>
+        <Label x:Name="balanceLabel" Grid.Column="0" Margin="5,77,10,0" Content="Balance" VerticalAlignment="Top" Foreground="#FFCDD9E5" FontSize="42" Height="72"/>
+        <Border BorderThickness="1" Margin="10,10,10,0" Grid.Row="1" Background="#FF2D333B" CornerRadius="30" Height="199" VerticalAlignment="Top">
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="2"/>
+            </Border.Effect>
+            <StackPanel>
+                <Label FontSize="20" Style="{StaticResource MaterialDesignLabel}" Margin="20 5 20 0" Foreground="#FFCDD9E5" Background="{x:Null}">Операции</Label>
+                <Button x:Name="replenishmentButton" Content="Пополнение" Margin="20 5 20 5" Foreground="#FFFFFCF6" Height="40" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="replenishmentButton_Click" />
+                <Button Content="Оплата" Margin="20 5 20 5" Foreground="#FFFFFCF6" Height="40" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                <Button Content="Перевод" Margin="20 5 20 5" Foreground="#FFFFFCF6" Height="40" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+            </StackPanel>
+        </Border>
+        <Border BorderThickness="1" Margin="10,10,10,0"  Background="#FF2D333B" CornerRadius="30" Grid.Row="2">
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="2"/>
+            </Border.Effect>
+            <StackPanel>
+                <Button x:Name="userInfoButton" Content="Информация о пользователе" Margin="20 20 20 5" Foreground="#FFFFFCF6" Height="40" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="userInfoButton_Click" />
+                <Button Content="Помощь" Margin="20 5 20 5" Foreground="#FFFFFCF6" Height="40" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                <Button x:Name="adminButton" Content="Панель администратора" Margin="20 5 20 5" Foreground="#FFFFFCF6" Height="40" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Visibility="Hidden" />
+            </StackPanel>
+        </Border>
+        <Label Grid.Column="1" Margin="10,31,0,0" Content="Последние операции" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FFCDD9E5" FontSize="24" Height="39" Width="247"/>
+        <Border Grid.Column="1" Grid.RowSpan="4" Background="#FF2D333B" CornerRadius="30" Margin="10,77,10,10">
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="2"/>
+            </Border.Effect>
+            <DataGrid x:Name="operationsTable" Margin="10,21,10,99" Background="#FF2D333B" CanUserReorderColumns="False" CanUserResizeColumns="False"/>
+
+        </Border>
+        <Button x:Name="updateTableButton" Content="Обновить" Foreground="#FFFFFCF6" Height="54" FontSize="20" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" RenderTransformOrigin="0.116,-2.597" Margin="64,21,68,0" Grid.Column="1" Grid.Row="3" Click="updateTableButton_Click"/>
+        <Button Content="Выход" Foreground="#FFFFFCF6" Height="54" FontSize="20" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" RenderTransformOrigin="0.116,-2.597" Margin="104,21,129,0" Grid.Row="3" Click="Button_Click"/>
     </Grid>
 </Window>
