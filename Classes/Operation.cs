@@ -11,6 +11,7 @@ namespace KursRSPO.Classes
     {
         [Key]
         public int id { get; set; }
+        public DateTime date { get; set; }
         public int user_id { get; set; }
         public string name { get; set; }
         public string Name
@@ -55,6 +56,16 @@ namespace KursRSPO.Classes
             this.name = name;
             Type = type;
             Amount = amount;
+            date = DateTime.UtcNow;
+        }
+
+        public Operation(int user_id, string name)
+        {
+            this.user_id = user_id;
+            this.name = name;
+            Type = "Оплата";
+            date = DateTime.UtcNow;
+            Amount = 1;
         }
 
     }

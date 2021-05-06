@@ -1,0 +1,16 @@
+﻿<Window x:Class="KursRSPO.TransferWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KursRSPO"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="TransferWindow" Height="275.257" Width="446.099" Background="#FF22272E" ResizeMode="NoResize" WindowStyle="None" MouseDown="Window_MouseDown">
+    <Grid>
+        <TextBox x:Name="amountField" Style="{StaticResource MaterialDesignTextBox}" materialDesign:HintAssist.Hint="Сумма" Background="{x:Null}" Margin="25,43,71,0" BorderBrush="#FFCDD9E5" CaretBrush="#FFCDD9E5" Foreground="#FFCDD9E5" FontSize="24" Height="47" VerticalAlignment="Top"></TextBox>
+        <Button x:Name="transferButton" Content="Перевести" Foreground="#FFFFFCF6" Height="54" FontSize="20" Margin="53,191,52,0" VerticalAlignment="Top" Click="transferButton_Click"/>
+        <Button x:Name="closeButton" Style="{StaticResource MaterialDesignFlatButton}" Padding="0 0 0 0" Content="X" Foreground="#FFFFFCF6" Height="40" FontSize="15" Margin="412,0,0,0" Click="closeButton_Click" VerticalAlignment="Top"/>
+        <TextBox x:Name="loginField" Style="{StaticResource MaterialDesignTextBox}" materialDesign:HintAssist.Hint="Логин (клиент для перевода)" Background="{x:Null}" Margin="25,117,71,0" BorderBrush="#FFCDD9E5" CaretBrush="#FFCDD9E5" Foreground="#FFCDD9E5" FontSize="24" Height="47" VerticalAlignment="Top"/>
+    </Grid>
+</Window>

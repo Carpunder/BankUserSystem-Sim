@@ -20,8 +20,6 @@ namespace KursRSPO
     /// </summary>
     public partial class MainWindow : Window
     {
-        public static List<User> Users;
-        public static List<Operation> Operations;
         private ApplicationContext db;
         public static User user;
         public MainWindow()
@@ -41,7 +39,8 @@ namespace KursRSPO
             {
                 values.Type,
                 values.Name,
-                values.Amount
+                values.Amount,
+                values.date
             }).ToList();
             operationsTable.ItemsSource = operations;
 
@@ -53,7 +52,8 @@ namespace KursRSPO
             {
                 values.Type,
                 values.Name,
-                values.Amount
+                values.Amount,
+                values.date
             }).ToList();
             operationsTable.ItemsSource = operations;
             balanceLabel.Content = $"{user.Balance} $";
@@ -79,7 +79,8 @@ namespace KursRSPO
                             $"Лицо: {user.Type}\n" +
                             $"Пасспорт: {user.Passport}\n" +
                             $"УНП: {user.Vatin}\n" +
-                            $"Телефон: {user.PhoneNumber}\n");
+                            $"Телефон: {user.PhoneNumber}\n" +
+                            $"Дата Регистрации: {user.registerDate}\n");
         }
 
         private void replenishmentButton_Click(object sender, RoutedEventArgs e)
@@ -91,5 +92,34 @@ namespace KursRSPO
             replenishmen.Show();
         }
 
+        private void transferButton_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (var VARIABLE in Application.Current.Windows)
+                if (VARIABLE is TransferWindow)
+                    return;
+            TransferWindow transferWindow = new TransferWindow { Owner = this };
+            transferWindow.Show();
+        }
+
+        private void logoutButton_Click(object sender, RoutedEventArgs e)
+        {
+            AuthorizationWindow authorization = new AuthorizationWindow();
+            authorization.Show();
+            Close();
+        }
+
+        private void paymentButton_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (var VARIABLE in Application.Current.Windows)
+                if (VARIABLE is PaymentWindow)
+                    return;
+            PaymentWindow paymentWindow = new PaymentWindow { Owner = this };
+            paymentWindow.Show();
+        }
+
+        private void adminButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

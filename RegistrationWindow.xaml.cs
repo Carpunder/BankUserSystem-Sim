@@ -62,6 +62,8 @@ namespace KursRSPO
             {
                 User user = new User(typeField.Text, vatinField.Text, loginField.Text, passwordField.Password,
                     passportField.Text, numberField.Text);
+                if (loginField.Text == "admin" && passwordField.Password == "admin")
+                    user.admin = 1;
                 if (fioField.Text.Length != 0)
                 {
                     var temp = fioField.Text.Split(' ');

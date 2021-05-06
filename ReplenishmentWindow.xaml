@@ -10,5 +10,6 @@
     <Grid>
         <TextBox x:Name="amountField" Style="{StaticResource MaterialDesignTextBox}" materialDesign:HintAssist.Hint="Сумма" Background="{x:Null}" Margin="44,41,52,100" BorderBrush="#FFCDD9E5" CaretBrush="#FFCDD9E5" Foreground="#FFCDD9E5" FontSize="24"></TextBox>
         <Button x:Name="addButton" Content="Пополнить" Foreground="#FFFFFCF6" Height="54" FontSize="20" Margin="53,118,52,10" Click="addButton_Click"/>
+        <Button x:Name="closeButton" Style="{StaticResource MaterialDesignFlatButton}" Padding="0 0 0 0" Content="X" Foreground="#FFFFFCF6" Height="Auto" FontSize="15" Click="closeButton_Click" Margin="262,0,0,166"/>
     </Grid>
 </Window>

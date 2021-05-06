@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -15,6 +16,7 @@ namespace KursRSPO.Classes
         public static int userId;
         [Key]
         public int id { get; set; }
+        public DateTime registerDate { get; set; }
         public int admin { get; set; }
         public string type;
         public string Type
@@ -152,6 +154,7 @@ namespace KursRSPO.Classes
             Password = password;
             Passport = passport;
             PhoneNumber = phoneNumber;
+            registerDate = DateTime.UtcNow;
         }
 
     }

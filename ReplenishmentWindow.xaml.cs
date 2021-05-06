@@ -52,5 +52,10 @@ namespace KursRSPO
                 MessageBox.Show("Введите сумму в правильном формате!");
             }
         }
+
+        private void closeButton_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }
