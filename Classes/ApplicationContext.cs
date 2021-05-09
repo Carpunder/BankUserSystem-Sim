@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data.Entity;
 
 namespace KursRSPO.Classes
-{ 
+{
     class ApplicationContext : DbContext
     {
         public DbSet<User> Users { get; set; }

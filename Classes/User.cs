@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace KursRSPO.Classes
 {
@@ -71,6 +72,8 @@ namespace KursRSPO.Classes
             get => password;
             set
             {
+                if (value == null)
+                    password = "1111";
                 if (value.Length > 3)
                     password = value;
                 else

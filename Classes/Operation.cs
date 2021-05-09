@@ -48,6 +48,14 @@ namespace KursRSPO.Classes
             }
         }
 
+        public DateTime Date
+        {
+            get => date;
+            set
+            {
+                date = value;
+            } }
+
         public Operation() {}
 
         public Operation(int user_id, string name, string type, double amount)
@@ -56,7 +64,7 @@ namespace KursRSPO.Classes
             this.name = name;
             Type = type;
             Amount = amount;
-            date = DateTime.UtcNow;
+            Date = DateTime.UtcNow;
         }
 
         public Operation(int user_id, string name)
@@ -64,7 +72,7 @@ namespace KursRSPO.Classes
             this.user_id = user_id;
             this.name = name;
             Type = "Оплата";
-            date = DateTime.UtcNow;
+            Date = DateTime.UtcNow;
             Amount = 1;
         }
 

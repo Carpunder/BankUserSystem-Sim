@@ -1,0 +1,10 @@
+﻿<Window x:Class="KursRSPO.AdminPaymentsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KursRSPO"
+        mc:Ignorable="d"
+        Title="AdminPaymentsWindow" Height="426" Width="864.887" ResizeMode="NoResize" Background="#FF22272E" WindowStyle="None" MouseDown="Window_MouseDown">
+    <Grid/>
+</Window>

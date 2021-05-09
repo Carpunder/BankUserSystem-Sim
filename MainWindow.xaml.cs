@@ -40,7 +40,7 @@ namespace KursRSPO
                 values.Type,
                 values.Name,
                 values.Amount,
-                values.date
+                values.Date
             }).ToList();
             operationsTable.ItemsSource = operations;
 
@@ -53,7 +53,7 @@ namespace KursRSPO
                 values.Type,
                 values.Name,
                 values.Amount,
-                values.date
+                values.Date
             }).ToList();
             operationsTable.ItemsSource = operations;
             balanceLabel.Content = $"{user.Balance} $";
@@ -119,7 +119,9 @@ namespace KursRSPO
 
         private void adminButton_Click(object sender, RoutedEventArgs e)
         {
-
+            AdminWindow admin = new AdminWindow();
+            admin.Show();
+            Close();
         }
     }
 }
