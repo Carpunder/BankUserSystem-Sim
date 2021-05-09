@@ -192,7 +192,11 @@ namespace KursRSPO
 
         private void paymentButton_Click(object sender, RoutedEventArgs e)
         {
-
+            foreach (var VARIABLE in Application.Current.Windows)
+                if (VARIABLE is AdminPaymentsWindow)
+                    return;
+            AdminPaymentsWindow adminPayments = new AdminPaymentsWindow { Owner = this };
+            adminPayments.Show();
         }
     }
 }
