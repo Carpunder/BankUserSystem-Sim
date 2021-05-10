@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -59,6 +60,7 @@ namespace KursRSPO
                 values.Amount,
                 values.Date
             }).ToList(); ;
+
         }
 
         private void closeButton_Click(object sender, RoutedEventArgs e)

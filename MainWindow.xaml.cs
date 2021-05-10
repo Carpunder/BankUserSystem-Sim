@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,10 +23,12 @@ namespace KursRSPO
     {
         private ApplicationContext db;
         public static User user;
+        private OperationList operationList;
         public MainWindow()
         {
             InitializeComponent();
             db = new ApplicationContext();
+            operationList = new OperationList();
         }
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
@@ -43,7 +46,11 @@ namespace KursRSPO
                 values.Date
             }).ToList();
             operationsTable.ItemsSource = operations;
-
+            if (!File.Exists("Operations.xml") && !File.Exists("Branch.xml"))
+            {
+                OperationList.OperationsXmlWrite(operationList.Operations);
+                OperationList.BranchXmlWrite(operationList.Branches);
+            }
         }
 
         private void updateTableButton_Click(object sender, RoutedEventArgs e)

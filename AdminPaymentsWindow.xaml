@@ -5,6 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KursRSPO"
         mc:Ignorable="d"
-        Title="AdminPaymentsWindow" Height="426" Width="864.887" ResizeMode="NoResize" Background="#FF22272E" WindowStyle="None" MouseDown="Window_MouseDown">
-    <Grid/>
+        Title="AdminPaymentsWindow" Height="406.357" Width="636.886" ResizeMode="NoResize" Background="#FF22272E" WindowStyle="None" MouseDown="Window_MouseDown" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="193*"/>
+            <RowDefinition Height="192*"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="closeButton" Style="{StaticResource MaterialDesignFlatButton}" Padding="0 0 0 0" Content="X" Foreground="#FFFFFCF6" Height="40" FontSize="15" Margin="603,0,0,164" VerticalAlignment="Bottom" RenderTransformOrigin="0.494,0.532" Click="closeButton_Click" HorizontalAlignment="Left" Width="34"/>
+        <DataGrid x:Name="operationsTable" HorizontalAlignment="Left" Height="173" Margin="10,10,0,0" VerticalAlignment="Top" Width="306" Background="#FF22272E" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False"/>
+        <DataGrid x:Name="branchTable" HorizontalAlignment="Left" Height="172" Margin="10,10,0,0" VerticalAlignment="Top" Width="306" Background="#FF22272E" Grid.Row="1" CanUserResizeRows="False" CanUserReorderColumns="False" CanUserResizeColumns="False"/>
+    </Grid>
 </Window>

@@ -28,7 +28,7 @@ namespace KursRSPO
             InitializeComponent();
             OperationsList = new OperationList();
             OperationsList.Operations = OperationList.OperationsXmlRead();
-            OperationsList.Branch = OperationList.BranchXmlRead();
+            OperationsList.Branches = OperationList.BranchXmlRead();
             db = new ApplicationContext();
         }
 

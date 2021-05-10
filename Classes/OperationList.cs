@@ -12,12 +12,22 @@ namespace KursRSPO.Classes
     public class OperationList
     {
         public List<Operation> Operations;
-        public List<string[]> Branch;
+        public List<Branch> Branches;
 
         public OperationList()
         {
-            Operations = new List<Operation>();
-            Branch = new List<string[]>();
+            Operations = new List<Operation>()
+            {
+                new(1, "Мобильный телефон")
+            };
+
+            Branches = new List<Branch>()
+            {
+                new ("Мобильный телефон", "Life :)"),
+                new ("Мобильный телефон", "МТС"),
+                new ("Мобильный телефон", "A1")
+            };
+
         }
 
         public List<string> GetNameList()
@@ -34,10 +44,10 @@ namespace KursRSPO.Classes
         public List<string> GetBranchList(string parent)
         {
             List<string> list = new List<string>();
-            foreach (var VARIABLE in Branch)
+            foreach (var VARIABLE in Branches)
             {
-                if(VARIABLE[0] == parent)
-                    list.Add(VARIABLE[1]);
+                if(VARIABLE.parent == parent)
+                    list.Add(VARIABLE.branch);
             }
 
             return list;
@@ -53,9 +63,9 @@ namespace KursRSPO.Classes
         }
 
 
-        public static void BranchXmlWrite(List<string[]> branch)
+        public static void BranchXmlWrite(List<Branch> branch)
         {
-            XmlSerializer formater = new XmlSerializer(typeof(List<string[]>));
+            XmlSerializer formater = new XmlSerializer(typeof(List<Branch>));
             using (FileStream fs = new FileStream("Branch.xml", FileMode.OpenOrCreate))
             {
                 formater.Serialize(fs, branch);
@@ -66,7 +76,7 @@ namespace KursRSPO.Classes
         {
             List<Operation> temp = new List<Operation>();
             XmlSerializer formater = new XmlSerializer(typeof(List<Operation>));
-            using (FileStream fs = new FileStream("Operations.xml", FileMode.OpenOrCreate))
+            using (FileStream fs = new FileStream("Operations.xml", FileMode.Open))
             {
                 temp = (List<Operation>)formater.Deserialize(fs);
             }
@@ -75,13 +85,13 @@ namespace KursRSPO.Classes
         }
 
 
-        public static List<string[]> BranchXmlRead()
+        public static List<Branch> BranchXmlRead()
         {
-            List<string[]> temp;
-            XmlSerializer formater = new XmlSerializer(typeof(List<string[]>));
-            using (FileStream fs = new FileStream("Branch.xml", FileMode.OpenOrCreate))
+            List<Branch> temp;
+            XmlSerializer formater = new XmlSerializer(typeof(List<Branch>));
+            using (FileStream fs = new FileStream("Branch.xml", FileMode.Open))
             {
-                temp = (List<string[]>)formater.Deserialize(fs);
+                temp = (List<Branch>)formater.Deserialize(fs);
             }
 
             return temp;
