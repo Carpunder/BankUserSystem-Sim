@@ -79,15 +79,18 @@ namespace KursRSPO
 
         private void userInfoButton_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show($"Логин: {user.Login}\n" +
-                            $"Имя: {user.FirstName}\n" +
-                            $"Фамилия: {user.MiddleName}\n" +
-                            $"Отчество: {user.LastName}\n" +
-                            $"Лицо: {user.Type}\n" +
-                            $"Пасспорт: {user.Passport}\n" +
-                            $"УНП: {user.Vatin}\n" +
-                            $"Телефон: {user.PhoneNumber}\n" +
-                            $"Дата Регистрации: {user.registerDate}\n");
+            if (user.Type == "Физическое")
+            {
+                MessageBox.Show($"Логин: {user.Login}\n" +
+                                $"Имя: {user.FirstName}\n" +
+                                $"Фамилия: {user.MiddleName}\n" +
+                                $"Отчество: {user.LastName}\n" +
+                                $"Лицо: {user.Type}\n" +
+                                $"Пасспорт: {user.Passport}\n" +
+                                $"УНП: {user.Vatin}\n" +
+                                $"Телефон: {user.PhoneNumber}\n" +
+                                $"Дата Регистрации: {user.registerDate}\n");
+            }
         }
 
         private void replenishmentButton_Click(object sender, RoutedEventArgs e)

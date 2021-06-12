@@ -18,14 +18,14 @@ namespace KursRSPO.Classes
         {
             Operations = new List<Operation>()
             {
-                new(1, "Мобильный телефон")
+                new Operation(1, "Мобильный телефон")
             };
 
             Branches = new List<Branch>()
             {
-                new ("Мобильный телефон", "Life :)"),
-                new ("Мобильный телефон", "МТС"),
-                new ("Мобильный телефон", "A1")
+                new Branch("Мобильный телефон", "Life :)"),
+                new Branch("Мобильный телефон", "МТС"),
+                new Branch("Мобильный телефон", "A1")
             };
 
         }

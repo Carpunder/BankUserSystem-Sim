@@ -60,7 +60,7 @@ namespace KursRSPO
         {
             try
             {
-                User user = new User(typeField.Text, vatinField.Text, loginField.Text, passwordField.Password,
+                User user = new User(typeField.Text, loginField.Text, passwordField.Password,
                     passportField.Text, numberField.Text);
                 if (loginField.Text == "admin" && passwordField.Password == "admin")
                     user.admin = 1;
@@ -71,6 +71,9 @@ namespace KursRSPO
                     user.middleName = temp[0];
                     user.lastName = temp[2];
                 }
+
+                if (vatinField.Text.Length != 0)
+                    user.Vatin = vatinField.Text;
 
                 db.Users.Add(user);
                 await db.SaveChangesAsync();

@@ -40,7 +40,7 @@ namespace KursRSPO.Classes
             get => vatin;
             set
             {
-                if (Regex.IsMatch(value, @"^[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]$"))
+                if (Regex.IsMatch(value, @"^[1-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]$"))
                 {
                     vatin = value;
                 }
@@ -128,7 +128,7 @@ namespace KursRSPO.Classes
             get => phoneNumber;
             set
             {
-                if (Regex.IsMatch(value, @"(44|25|33|29)[0-9][0-9][0-9][0-9][0-9][0-9][0-9]$"))
+                if (Regex.IsMatch(value, @"(44|25|33|29)[1-9][0-9][0-9][0-9][0-9][0-9][0-9]$"))
                 {
                     phoneNumber = value;
                 }
@@ -160,5 +160,14 @@ namespace KursRSPO.Classes
             registerDate = DateTime.UtcNow;
         }
 
+        public User(string userType, string login, string password, string passport, string phoneNumber)
+        {
+            Type = userType;
+            Login = login;
+            Password = password;
+            Passport = passport;
+            PhoneNumber = phoneNumber;
+            registerDate = DateTime.UtcNow;
+        }
     }
 }

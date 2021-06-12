@@ -114,7 +114,9 @@ namespace KursRSPO
 
         private void makeAdminButton_Click(object sender, RoutedEventArgs e)
         {
-            var user_id = Convert.ToInt32(userAdminIdField.Text);
+            int user_id;
+            if(!Int32.TryParse(userAdminIdField.Text, out  user_id))
+                return;
             var user = db.Users.FirstOrDefault(i => i.id == user_id);
             if (user != null)
             {
@@ -141,7 +143,9 @@ namespace KursRSPO
 
         private void unAdminButton_Click(object sender, RoutedEventArgs e)
         {
-            var user_id = Convert.ToInt32(userAdminIdField.Text);
+            int user_id;
+            if (!Int32.TryParse(userAdminIdField.Text, out user_id))
+                return;
             var user = db.Users.FirstOrDefault(i => i.id == user_id);
             if (user != null)
             {
@@ -168,7 +172,9 @@ namespace KursRSPO
 
         private void deleteButton_Click(object sender, RoutedEventArgs e)
         {
-            var userId = Convert.ToInt32(userAdminIdField.Text);
+            int userId;
+            if (!Int32.TryParse(userAdminIdField.Text, out userId))
+                return;
             var user = db.Users.FirstOrDefault(i => i.id == userId);
             if (user != null)
             {
